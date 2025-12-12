@@ -1,0 +1,361 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="lqd_copter">
+    <pose>0 0 0.15 0 0 0</pose>
+
+    <!-- Base Link -->
+    <link name="base_link">
+      <velocity_decay>
+        <linear>0.0</linear>
+        <angular>0.0</angular>
+      </velocity_decay>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.52</mass>
+        <inertia>
+          <ixx>0.011</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.015</iyy>
+          <iyz>0</iyz>
+          <izz>0.021</izz>
+        </inertia>
+      </inertial>
+      
+      <collision name="base_link_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box><size>0.4 0.4 0.15</size></box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>1000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      
+      <visual name="base_link_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://lqd_copter/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!-- IMU Link -->
+    <link name='imu_link'>
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.015</mass>
+        <inertia>
+          <ixx>0.00001</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.00002</iyy><iyz>0</iyz><izz>0.00002</izz>
+        </inertia>
+      </inertial>
+      <sensor name="imu_sensor" type="imu">
+        <pose>0 0 0 3.141593 0 0</pose>
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+      </sensor>
+    </link>
+    <joint name='imu_joint' type='revolute'>
+      <child>imu_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>0</lower><upper>0</upper><effort>0</effort><velocity>0</velocity></limit>
+      </axis>
+    </joint>
+
+    <!-- Rotor 0 -->
+    <joint name="rotor_0_joint" type="revolute">
+      <pose relative_to="base_link">0.1 -0.1 0.025 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor_0_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>-1e16</lower><upper>1e16</upper></limit>
+        <dynamics><spring_reference>0</spring_reference><spring_stiffness>0</spring_stiffness></dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_0_link">
+      <pose relative_to="rotor_0_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>0.005</mass>
+        <inertia>
+          <ixx>9.75e-06</ixx>
+          <ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.000273104</iyy><iyz>0</iyz><izz>0.000274004</izz>
+        </inertia>
+      </inertial>
+      <visual name="rotor_0_visual">
+        <geometry>
+          <mesh><scale>1 1 1</scale><uri>model://lqd_copter/meshes/properller_1_link.STL</uri></mesh>
+        </geometry>
+        <material><script><name>Gazebo/Blue</name></script></material>
+      </visual>
+    </link>
+
+    <!-- Rotor 1 -->
+    <joint name="rotor_1_joint" type="revolute">
+      <pose relative_to="base_link">-0.1 0.1 0.025 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor_1_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>-1e16</lower><upper>1e16</upper></limit>
+        <dynamics><spring_reference>0</spring_reference><spring_stiffness>0</spring_stiffness></dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_1_link">
+      <pose relative_to="rotor_1_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>0.005</mass>
+        <inertia>
+          <ixx>9.75e-06</ixx>
+          <ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.000273104</iyy><iyz>0</iyz><izz>0.000274004</izz>
+        </inertia>
+      </inertial>
+      <visual name="rotor_1_visual">
+        <geometry>
+          <mesh><scale>1 1 1</scale><uri>model://lqd_copter/meshes/properller_2_link.STL</uri></mesh>
+        </geometry>
+        <material><script><name>Gazebo/Grey</name></script></material>
+      </visual>
+    </link>
+
+    <!-- Rotor 2 -->
+    <joint name="rotor_2_joint" type="revolute">
+      <pose relative_to="base_link">0.1 0.1 0.025 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor_2_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>-1e16</lower><upper>1e16</upper></limit>
+        <dynamics><spring_reference>0</spring_reference><spring_stiffness>0</spring_stiffness></dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_2_link">
+      <pose relative_to="rotor_2_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>0.005</mass>
+        <inertia>
+          <ixx>9.75e-06</ixx>
+          <ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.000273104</iyy><iyz>0</iyz><izz>0.000274004</izz>
+        </inertia>
+      </inertial>
+      <visual name="rotor_2_visual">
+        <geometry>
+          <mesh><scale>1 1 1</scale><uri>model://lqd_copter/meshes/properller_3_link.STL</uri></mesh>
+        </geometry>
+        <material><script><name>Gazebo/Blue</name></script></material>
+      </visual>
+    </link>
+
+    <!-- Rotor 3 -->
+    <joint name="rotor_3_joint" type="revolute">
+      <pose relative_to="base_link">-0.1 -0.1 0.025 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor_3_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>-1e16</lower><upper>1e16</upper></limit>
+        <dynamics><spring_reference>0</spring_reference><spring_stiffness>0</spring_stiffness></dynamics>
+      </axis>
+    </joint>
+    <link name="rotor_3_link">
+      <pose relative_to="rotor_3_joint">0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>0.005</mass>
+        <inertia>
+          <ixx>9.75e-06</ixx>
+          <ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.000273104</iyy><iyz>0</iyz><izz>0.000274004</izz>
+        </inertia>
+      </inertial>
+      <visual name="rotor_3_visual">
+        <geometry>
+          <mesh><scale>1 1 1</scale><uri>model://lqd_copter/meshes/properller_4_link.STL</uri></mesh>
+        </geometry>
+        <material><script><name>Gazebo/Grey</name></script></material>
+      </visual>
+    </link>
+
+    <!-- ========================================== -->
+    <!-- Aerodynamics (Softened for Light Drone)    -->
+    <!-- CDA reduced from 0.10 to 0.01              -->
+    <!-- ========================================== -->
+    
+    <!-- Rotor 0 (CCW) -->
+    <plugin name="rotor_0_blade_1" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla>
+      <cda>0.01</cda> <!-- Reduced Drag -->
+      <cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall>
+      <area>0.002</area><air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp><forward>0 1 0</forward><upward>0 0 1</upward>
+      <link_name>rotor_0_link</link_name>
+    </plugin>
+    <plugin name="rotor_0_blade_2" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla>
+      <cda>0.01</cda> <!-- Reduced Drag -->
+      <cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall>
+      <area>0.002</area><air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp><forward>0 -1 0</forward><upward>0 0 1</upward>
+      <link_name>rotor_0_link</link_name>
+    </plugin>
+
+    <!-- Rotor 1 (CCW) -->
+    <plugin name="rotor_1_blade_1" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla>
+      <cda>0.01</cda> <!-- Reduced Drag -->
+      <cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall>
+      <area>0.002</area><air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp><forward>0 1 0</forward><upward>0 0 1</upward>
+      <link_name>rotor_1_link</link_name>
+    </plugin>
+    <plugin name="rotor_1_blade_2" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla>
+      <cda>0.01</cda> <!-- Reduced Drag -->
+      <cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall>
+      <area>0.002</area><air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp><forward>0 -1 0</forward><upward>0 0 1</upward>
+      <link_name>rotor_1_link</link_name>
+    </plugin>
+
+    <!-- Rotor 2 (CW) -->
+    <plugin name="rotor_2_blade_1" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla>
+      <cda>0.01</cda> <!-- Reduced Drag -->
+      <cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall>
+      <area>0.002</area><air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp><forward>0 -1 0</forward><upward>0 0 1</upward>
+      <link_name>rotor_2_link</link_name>
+    </plugin>
+    <plugin name="rotor_2_blade_2" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla>
+      <cda>0.01</cda> <!-- Reduced Drag -->
+      <cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall>
+      <area>0.002</area><air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp><forward>0 1 0</forward><upward>0 0 1</upward>
+      <link_name>rotor_2_link</link_name>
+    </plugin>
+
+    <!-- Rotor 3 (CW) -->
+    <plugin name="rotor_3_blade_1" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla>
+      <cda>0.01</cda> <!-- Reduced Drag -->
+      <cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall>
+      <area>0.002</area><air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp><forward>0 -1 0</forward><upward>0 0 1</upward>
+      <link_name>rotor_3_link</link_name>
+    </plugin>
+    <plugin name="rotor_3_blade_2" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla>
+      <cda>0.01</cda> <!-- Reduced Drag -->
+      <cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall>
+      <area>0.002</area><air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp><forward>0 1 0</forward><upward>0 0 1</upward>
+      <link_name>rotor_3_link</link_name>
+    </plugin>
+
+    <!-- ArduPilot Plugin -->
+    <plugin name="ardupilot_plugin" filename="libArduPilotPlugin.so">
+      <fdm_addr>127.0.0.1</fdm_addr>
+      <fdm_port_in>9002</fdm_port_in>
+      <fdm_port_out>9003</fdm_port_out>
+      
+      <modelXYZToAirplaneXForwardZDown>0 0 0 3.141593 0 0</modelXYZToAirplaneXForwardZDown>
+      
+      <imuName>lqd_copter::imu_link::imu_sensor</imuName>
+      <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
+
+      <!-- Channel 0 (Rotor 0, CCW) -->
+      <control channel="0">
+        <type>VELOCITY</type>
+        <offset>0</offset>
+        <p_gain>0.10</p_gain> <!-- Reduced P Gain -->
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.5</cmd_max>
+        <cmd_min>-2.5</cmd_min>
+        <jointName>rotor_0_joint</jointName>
+        <multiplier>838</multiplier>
+        <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+      </control>
+
+      <!-- Channel 1 (Rotor 1, CCW) -->
+      <control channel="1">
+        <type>VELOCITY</type>
+        <offset>0</offset>
+        <p_gain>0.10</p_gain> <!-- Reduced P Gain -->
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.5</cmd_max>
+        <cmd_min>-2.5</cmd_min>
+        <jointName>rotor_1_joint</jointName>
+        <multiplier>838</multiplier>
+        <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+      </control>
+
+      <!-- Channel 2 (Rotor 2, CW) -->
+      <control channel="2">
+        <type>VELOCITY</type>
+        <offset>0</offset>
+        <p_gain>0.10</p_gain> <!-- Reduced P Gain -->
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.5</cmd_max>
+        <cmd_min>-2.5</cmd_min>
+        <jointName>rotor_2_joint</jointName>
+        <multiplier>-838</multiplier>
+        <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+      </control>
+
+      <!-- Channel 3 (Rotor 3, CW) -->
+      <control channel="3">
+        <type>VELOCITY</type>
+        <offset>0</offset>
+        <p_gain>0.10</p_gain> <!-- Reduced P Gain -->
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.5</cmd_max>
+        <cmd_min>-2.5</cmd_min>
+        <jointName>rotor_3_joint</jointName>
+        <multiplier>-838</multiplier>
+        <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+      </control>
+
+    </plugin>
+  </model>
+</sdf>

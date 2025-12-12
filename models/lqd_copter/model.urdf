@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="lqd_copter">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00617482473041862 0.0001794251338575 0.0305480560501509"
+        rpy="0 0 0" />
+      <mass
+        value="0.520683001445861" />
+      <inertia
+        ixx="0.00022133897180325"
+        ixy="9.35007659910226E-08"
+        ixz="-4.41707710385004E-07"
+        iyy="0.000663805246005948"
+        iyz="3.14719958252571E-08"
+        izz="0.000846808483271881" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lqd_copter/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lqd_copter/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="properller_1_link">
+    <inertial>
+      <origin
+        xyz="1.15927733732035E-07 -7.7607819781722E-08 0.00299996183994355"
+        rpy="0 0 0" />
+      <mass
+        value="0.000586847952012767" />
+      <inertia
+        ixx="2.28133573781215E-07"
+        ixy="-2.6421305426285E-12"
+        ixz="-1.70721687755119E-13"
+        iyy="2.28130279887108E-07"
+        iyz="4.22761169336475E-14"
+        izz="4.54197545572969E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lqd_copter/meshes/properller_1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lqd_copter/meshes/properller_1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="properller_1"
+    type="continuous">
+    <origin
+      xyz="0.1 -0.1 0.025"
+      rpy="0 0 1.029" />
+    <parent
+      link="base_link" />
+    <child
+      link="properller_1_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="properller_2_link">
+    <inertial>
+      <origin
+        xyz="1.58023450338995E-07 -1.19410335966408E-07 0.0029999783646267"
+        rpy="0 0 0" />
+      <mass
+        value="0.000586848605005601" />
+      <inertia
+        ixx="2.28134297656071E-07"
+        ixy="-2.6731348083724E-12"
+        ixz="-9.87488189306748E-14"
+        iyy="2.28130299898496E-07"
+        iyz="-1.99864020864917E-13"
+        izz="4.54198247223058E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lqd_copter/meshes/properller_2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lqd_copter/meshes/properller_2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="properller_2"
+    type="continuous">
+    <origin
+      xyz="-0.1 0.1 0.025"
+      rpy="0 0 -2.1126" />
+    <parent
+      link="base_link" />
+    <child
+      link="properller_2_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="properller_3_link">
+    <inertial>
+      <origin
+        xyz="1.37282998108335E-07 -1.14992715516404E-07 0.00299996862418647"
+        rpy="0 0 0" />
+      <mass
+        value="0.000586848978839478" />
+      <inertia
+        ixx="2.28134199017239E-07"
+        ixy="-2.63292224305926E-12"
+        ixz="-3.35523316689599E-13"
+        iyy="2.28130746866247E-07"
+        iyz="-5.71410732038244E-14"
+        izz="4.5419857123494E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lqd_copter/meshes/properller_3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lqd_copter/meshes/properller_3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="properller_3"
+    type="continuous">
+    <origin
+      xyz="0.1 0.1 0.025"
+      rpy="0 0 -2.1126" />
+    <parent
+      link="base_link" />
+    <child
+      link="properller_3_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="properller_4_link">
+    <inertial>
+      <origin
+        xyz="1.64831467031057E-07 -9.90812103196514E-08 0.00299996842771919"
+        rpy="0 0 0" />
+      <mass
+        value="0.000586848223917086" />
+      <inertia
+        ixx="2.28133952278026E-07"
+        ixy="-2.45154982826056E-12"
+        ixz="-9.43629479878972E-14"
+        iyy="2.28130296017763E-07"
+        iyz="-4.80234773537992E-13"
+        izz="4.54197922772978E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lqd_copter/meshes/properller_4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lqd_copter/meshes/properller_4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="properller_4"
+    type="continuous">
+    <origin
+      xyz="-0.1 -0.1 0.025"
+      rpy="0 0 1.029" />
+    <parent
+      link="base_link" />
+    <child
+      link="properller_4_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
