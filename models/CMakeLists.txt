@@ -116,6 +116,8 @@ house_3
 husky
 iris_with_standoffs
 iris_with_standoffs_demo
+lqd_copter
+quadtilt
 irobot_hand
 iss
 iss_half
