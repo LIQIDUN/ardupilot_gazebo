@@ -3,14 +3,14 @@
     <link name='base_link'>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
-        <mass>1</mass>
+        <mass>2.5</mass>
         <inertia>
-          <ixx>0.015</ixx>
+          <ixx>0.10</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.015</iyy>
+          <iyy>0.10</iyy>
           <iyz>0</iyz>
-          <izz>0.02</izz>
+          <izz>0.10</izz>
         </inertia>
       </inertial>
       <collision name='base_link_collision'>
@@ -488,20 +488,20 @@
     <!-- ========================================================== -->
 
     <!-- Aero Prop 0 (CCW) -->
-    <plugin name="rotor_0_blade_1" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.01</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.002</area><air_density>1.2041</air_density><cp>0.084 0 0</cp><forward>0 1 0</forward><upward>0 0 1</upward><link_name>properller_0_Link</link_name></plugin>
-    <plugin name="rotor_0_blade_2" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.01</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.002</area><air_density>1.2041</air_density><cp>-0.084 0 0</cp><forward>0 -1 0</forward><upward>0 0 1</upward><link_name>properller_0_Link</link_name></plugin>
+    <plugin name="rotor_0_blade_1" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.06</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.005</area><air_density>1.2041</air_density><cp>0.084 0 0</cp><forward>0 1 0</forward><upward>0 0 1</upward><link_name>properller_0_Link</link_name></plugin>
+    <plugin name="rotor_0_blade_2" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.06</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.005</area><air_density>1.2041</air_density><cp>-0.084 0 0</cp><forward>0 -1 0</forward><upward>0 0 1</upward><link_name>properller_0_Link</link_name></plugin>
 
     <!-- Aero Prop 1 (CCW) -->
-    <plugin name="rotor_1_blade_1" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.01</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.002</area><air_density>1.2041</air_density><cp>0.084 0 0</cp><forward>0 1 0</forward><upward>0 0 1</upward><link_name>properller_1_Link</link_name></plugin>
-    <plugin name="rotor_1_blade_2" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.01</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.002</area><air_density>1.2041</air_density><cp>-0.084 0 0</cp><forward>0 -1 0</forward><upward>0 0 1</upward><link_name>properller_1_Link</link_name></plugin>
+    <plugin name="rotor_1_blade_1" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.06</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.005</area><air_density>1.2041</air_density><cp>0.084 0 0</cp><forward>0 1 0</forward><upward>0 0 1</upward><link_name>properller_1_Link</link_name></plugin>
+    <plugin name="rotor_1_blade_2" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.06</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.005</area><air_density>1.2041</air_density><cp>-0.084 0 0</cp><forward>0 -1 0</forward><upward>0 0 1</upward><link_name>properller_1_Link</link_name></plugin>
 
     <!-- Aero Prop 2 (CW) -->
-    <plugin name="rotor_2_blade_1" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.01</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.002</area><air_density>1.2041</air_density><cp>0.084 0 0</cp><forward>0 -1 0</forward><upward>0 0 1</upward><link_name>properller_2_Link</link_name></plugin>
-    <plugin name="rotor_2_blade_2" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.01</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.002</area><air_density>1.2041</air_density><cp>-0.084 0 0</cp><forward>0 1 0</forward><upward>0 0 1</upward><link_name>properller_2_Link</link_name></plugin>
+    <plugin name="rotor_2_blade_1" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.06</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.005</area><air_density>1.2041</air_density><cp>0.084 0 0</cp><forward>0 -1 0</forward><upward>0 0 1</upward><link_name>properller_2_Link</link_name></plugin>
+    <plugin name="rotor_2_blade_2" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.06</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.005</area><air_density>1.2041</air_density><cp>-0.084 0 0</cp><forward>0 1 0</forward><upward>0 0 1</upward><link_name>properller_2_Link</link_name></plugin>
 
     <!-- Aero Prop 3 (CW) -->
-    <plugin name="rotor_3_blade_1" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.01</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.002</area><air_density>1.2041</air_density><cp>0.084 0 0</cp><forward>0 -1 0</forward><upward>0 0 1</upward><link_name>properller_3_Link</link_name></plugin>
-    <plugin name="rotor_3_blade_2" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.01</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.002</area><air_density>1.2041</air_density><cp>-0.084 0 0</cp><forward>0 1 0</forward><upward>0 0 1</upward><link_name>properller_3_Link</link_name></plugin>
+    <plugin name="rotor_3_blade_1" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.06</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.005</area><air_density>1.2041</air_density><cp>0.084 0 0</cp><forward>0 -1 0</forward><upward>0 0 1</upward><link_name>properller_3_Link</link_name></plugin>
+    <plugin name="rotor_3_blade_2" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.06</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.005</area><air_density>1.2041</air_density><cp>-0.084 0 0</cp><forward>0 1 0</forward><upward>0 0 1</upward><link_name>properller_3_Link</link_name></plugin>
 
     <!-- ArduPilot Control -->
     <plugin name="ardupilot_plugin" filename="libArduPilotPlugin.so">
@@ -513,16 +513,16 @@
       <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
 
       <!-- Motors (0-3) -->
-      <control channel="0"><type>VELOCITY</type><offset>0</offset><p_gain>0.20</p_gain><i_gain>0</i_gain><d_gain>0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.5</cmd_max><cmd_min>-2.5</cmd_min><jointName>properller_0</jointName><multiplier>838</multiplier></control>
-      <control channel="1"><type>VELOCITY</type><offset>0</offset><p_gain>0.20</p_gain><i_gain>0</i_gain><d_gain>0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.5</cmd_max><cmd_min>-2.5</cmd_min><jointName>properller_1</jointName><multiplier>838</multiplier></control>
-      <control channel="2"><type>VELOCITY</type><offset>0</offset><p_gain>0.20</p_gain><i_gain>0</i_gain><d_gain>0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.5</cmd_max><cmd_min>-2.5</cmd_min><jointName>properller_2</jointName><multiplier>-838</multiplier></control>
-      <control channel="3"><type>VELOCITY</type><offset>0</offset><p_gain>0.20</p_gain><i_gain>0</i_gain><d_gain>0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.5</cmd_max><cmd_min>-2.5</cmd_min><jointName>properller_3</jointName><multiplier>-838</multiplier></control>
+      <control channel="0"><type>VELOCITY</type><offset>0</offset><p_gain>0.05</p_gain><i_gain>0</i_gain><d_gain>0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.5</cmd_max><cmd_min>-2.5</cmd_min><jointName>properller_0</jointName><multiplier>800</multiplier></control>
+      <control channel="1"><type>VELOCITY</type><offset>0</offset><p_gain>0.05</p_gain><i_gain>0</i_gain><d_gain>0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.5</cmd_max><cmd_min>-2.5</cmd_min><jointName>properller_1</jointName><multiplier>800</multiplier></control>
+      <control channel="2"><type>VELOCITY</type><offset>0</offset><p_gain>0.05</p_gain><i_gain>0</i_gain><d_gain>0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.5</cmd_max><cmd_min>-2.5</cmd_min><jointName>properller_2</jointName><multiplier>-800</multiplier></control>
+      <control channel="3"><type>VELOCITY</type><offset>0</offset><p_gain>0.05</p_gain><i_gain>0</i_gain><d_gain>0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.5</cmd_max><cmd_min>-2.5</cmd_min><jointName>properller_3</jointName><multiplier>-800</multiplier></control>
 
       <!-- Tilt Servos (4-7) - NO OFFSET as requested -->
-      <control channel="4"><type>POSITION</type><offset>-0.85</offset><p_gain>2.0</p_gain><i_gain>0</i_gain><d_gain>0.5</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min><jointName>tilt_0</jointName><multiplier>-1.495</multiplier></control>
-      <control channel="5"><type>POSITION</type><offset>-0.85</offset><p_gain>2.0</p_gain><i_gain>0</i_gain><d_gain>0.5</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min><jointName>tilt_1</jointName><multiplier>-1.495</multiplier></control>
-      <control channel="6"><type>POSITION</type><offset>-0.85</offset><p_gain>2.0</p_gain><i_gain>0</i_gain><d_gain>0.5</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min><jointName>tilt_2</jointName><multiplier>-1.495</multiplier></control>
-      <control channel="7"><type>POSITION</type><offset>-0.85</offset><p_gain>2.0</p_gain><i_gain>0</i_gain><d_gain>0.5</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min><jointName>tilt_3</jointName><multiplier>-1.495</multiplier></control>
+      <control channel="4"><type>POSITION</type><offset>-0.85</offset><p_gain>40.0</p_gain><i_gain>0</i_gain><d_gain>0.5</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min><jointName>tilt_0</jointName><multiplier>-1.495</multiplier></control>
+      <control channel="5"><type>POSITION</type><offset>-0.85</offset><p_gain>40.0</p_gain><i_gain>0</i_gain><d_gain>0.5</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min><jointName>tilt_1</jointName><multiplier>-1.495</multiplier></control>
+      <control channel="6"><type>POSITION</type><offset>-0.85</offset><p_gain>40.0</p_gain><i_gain>0</i_gain><d_gain>0.5</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min><jointName>tilt_2</jointName><multiplier>-1.495</multiplier></control>
+      <control channel="7"><type>POSITION</type><offset>-0.85</offset><p_gain>40.0</p_gain><i_gain>0</i_gain><d_gain>0.5</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min><jointName>tilt_3</jointName><multiplier>-1.495</multiplier></control>
     </plugin>
   </model>
 </sdf>
