@@ -1,0 +1,522 @@
+<sdf version='1.7'>
+  <model name='quadtilt_new'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0.0 -0.000647 0.024368 0 -0 0</pose>
+        <mass>2.3411</mass>
+        <inertia>
+          <ixx>0.0013622</ixx>
+          <ixy>1.2109e-05</ixy>
+          <ixz>2.1278e-05</ixz>
+          <iyy>0.011253</iyy>
+          <iyz>1.003e-06</iyz>
+          <izz>0.011215</izz>
+        </inertia>
+      </inertial>
+      <!-- <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadtilt_new/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>30</max_contacts> 
+        <surface>
+          <contact>
+            <ode>
+              <kp>1000000</kp>
+              <kd>100</kd>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision> -->
+
+      <collision name='landing_gear_front_collision'>
+      <pose>-0.3 0 -0.18 0 0 0</pose> <!-- ⚠️ 请替换为你前起落架脚尖的实际坐标 -->
+      <geometry>
+        <!-- <box><size>0.03 0.03 0.01</size></box> -->
+        <sphere><radius>0.03</radius></sphere>
+      </geometry>
+      <surface>
+        <!-- <contact><ode><kp>1e6</kp><kd>100</kd><max_vel>0.0</max_vel><min_depth>0.002</min_depth></ode></contact> -->
+        <contact>
+          <ode>
+            <!-- [关键1] 降低刚度 kp。原本1e6太硬像钢铁，现在1e5(十万)像硬橡胶 -->
+            <kp>1000000</kp>
+            <!-- [关键2] 极大提高阻尼 kd。以前是100，现在2000。吸收一切高频震动动能 -->
+            <kd>10</kd>
+            <!-- [关键3] 给一个极小但非0的允许修正速度，防止挤压应力把 EKF 炸掉 -->
+            <max_vel>0.2</max_vel>
+            <!-- [关键4] 允许 5 毫米的弹性形变陷落深度，作为物理缓冲层 -->
+            <min_depth>0.001</min_depth>
+          </ode>
+        </contact>
+        <friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction>
+      </surface>
+    </collision>
+
+    <!-- 左起落架脚垫 -->
+    <collision name='landing_gear_left_collision'>
+      <pose>0.3 0.2 -0.18 0 0 0</pose> <!-- ⚠️ 请替换为实际坐标 -->
+      <geometry>
+        <!-- <box><size>0.03 0.03 0.01</size></box> -->
+        <sphere><radius>0.03</radius></sphere>
+      </geometry>
+      <surface>
+        <!-- <contact><ode><kp>1e6</kp><kd>100</kd><max_vel>0.0</max_vel><min_depth>0.002</min_depth></ode></contact> -->
+        <contact>
+          <ode>
+            <!-- [关键1] 降低刚度 kp。原本1e6太硬像钢铁，现在1e5(十万)像硬橡胶 -->
+            <kp>1000000</kp>
+            <!-- [关键2] 极大提高阻尼 kd。以前是100，现在2000。吸收一切高频震动动能 -->
+            <kd>10</kd>
+            <!-- [关键3] 给一个极小但非0的允许修正速度，防止挤压应力把 EKF 炸掉 -->
+            <max_vel>0.2</max_vel>
+            <!-- [关键4] 允许 5 毫米的弹性形变陷落深度，作为物理缓冲层 -->
+            <min_depth>0.001</min_depth>
+          </ode>
+        </contact>
+        <friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction>
+      </surface>
+    </collision>
+
+    <!-- 右起落架脚垫 -->
+    <collision name='landing_gear_right_collision'>
+      <pose>0.3 -0.2 -0.18 0 0 0</pose> <!-- ⚠️ 请替换为实际坐标 -->
+      <geometry>
+        <!-- <box><size>0.03 0.03 0.01</size></box> -->
+        <sphere><radius>0.03</radius></sphere>
+      </geometry>
+      <surface>
+        <!-- <contact><ode><kp>1e6</kp><kd>100</kd><max_vel>0.0</max_vel><min_depth>0.002</min_depth></ode></contact> -->
+        <contact>
+          <ode>
+            <!-- [关键1] 降低刚度 kp。原本1e6太硬像钢铁，现在1e5(十万)像硬橡胶 -->
+            <kp>1000000</kp>
+            <!-- [关键2] 极大提高阻尼 kd。以前是100，现在2000。吸收一切高频震动动能 -->
+            <kd>10</kd>
+            <!-- [关键3] 给一个极小但非0的允许修正速度，防止挤压应力把 EKF 炸掉 -->
+            <max_vel>0.2</max_vel>
+            <!-- [关键4] 允许 5 毫米的弹性形变陷落深度，作为物理缓冲层 -->
+            <min_depth>0.001</min_depth>
+          </ode>
+        </contact>
+        <friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction>
+      </surface>
+    </collision>
+
+
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadtilt_new/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!-- IMU Link -->
+    <link name='imu_link'>
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.015</mass>
+        <inertia>
+          <ixx>0.00001</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.00002</iyy><iyz>0</iyz><izz>0.00002</izz>
+        </inertia>
+      </inertial>
+      <sensor name="imu_sensor" type="imu">
+        <pose>0 0 0 3.141593 0 0</pose>
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+      </sensor>
+    </link>
+    <joint name='imu_joint' type='fixed'>
+      <child>imu_link</child>
+      <parent>base_link</parent>
+      <!-- <axis>
+        <xyz>0 0 1</xyz>
+        <limit><lower>0</lower><upper>0</upper><effort>0</effort><velocity>0</velocity></limit>
+      </axis> -->
+    </joint>
+
+
+    <joint name='tilt_0_joint' type='revolute'>
+      <pose relative_to='base_link'>0.255 0 0 -1.5708 -1.5708 -3.14159</pose>
+      <parent>base_link</parent>
+      <child>tilt_0_Link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tilt_0_Link'>
+      <pose relative_to='tilt_0_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.028311 -0 -0 0 -0 0</pose>
+        <mass>0.94736</mass>
+        <inertia>
+          <ixx>0.0033591</ixx>
+          <ixy>-3.2015e-12</ixy>
+          <ixz>5.825e-11</ixz>
+          <iyy>0.0032937</iyy>
+          <iyz>6.3798e-10</iyz>
+          <izz>0.0001883</izz>
+        </inertia>
+      </inertial>
+      <collision name='tilt_0_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadtilt_new/meshes/tilt_0_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tilt_0_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadtilt_new/meshes/tilt_0_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material><script><name>Gazebo/Blue</name></script></material>
+      </visual>
+    </link>
+    <joint name='properller_0_joint' type='revolute'>
+      <pose relative_to='tilt_0_Link'>0.05075 0 0.255 -1.5708 -0 -1.5708</pose>
+      <parent>tilt_0_Link</parent>
+      <child>properller_0_Link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.002</damping>   
+          <friction>0.005</friction> 
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='properller_0_Link'>
+      <pose relative_to='properller_0_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0.005 0 -0 0</pose>
+        <mass>0.025</mass>  <!-- 25克 -->
+        <inertia>
+          <ixx>0.00005</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00005</iyy>
+          <iyz>0</iyz>
+          <izz>0.0003</izz>  <!-- 匹配 15 寸桨的转动惯量 -->
+        </inertia>
+      </inertial>
+      <collision name='properller_0_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadtilt_new/meshes/properller_0_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='properller_0_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadtilt_new/meshes/properller_0_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material><script><name>Gazebo/Blue</name></script></material>
+      </visual>
+    </link>
+    <joint name='properller_2_joint' type='revolute'>
+      <pose relative_to='tilt_0_Link'>0.05075 0 -0.255 -1.5708 -0 -1.5708</pose>
+      <parent>tilt_0_Link</parent>
+      <child>properller_2_Link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.002</damping>   
+          <friction>0.005</friction> 
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='properller_2_Link'>
+      <pose relative_to='properller_2_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 -0 0.005 0 -0 0</pose>
+        <mass>0.025</mass>  <!-- 25克 -->
+        <inertia>
+          <ixx>0.00005</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00005</iyy>
+          <iyz>0</iyz>
+          <izz>0.0003</izz>  <!-- 匹配 15 寸桨的转动惯量 -->
+        </inertia>
+      </inertial>
+      <collision name='properller_2_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadtilt_new/meshes/properller_2_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='properller_2_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadtilt_new/meshes/properller_2_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material><script><name>Gazebo/Blue</name></script></material>
+      </visual>
+    </link>
+    <joint name='tilt_1_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.255 0 0 -1.5708 -1.5708 -3.14159</pose>
+      <parent>base_link</parent>
+      <child>tilt_1_Link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>2</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='tilt_1_Link'>
+      <pose relative_to='tilt_1_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.028311 -0 -0 0 -0 0</pose>
+        <mass>0.94736</mass>
+        <inertia>
+          <ixx>0.0033591</ixx>
+          <ixy>-3.2015e-12</ixy>
+          <ixz>5.825e-11</ixz>
+          <iyy>0.0032937</iyy>
+          <iyz>6.3798e-10</iyz>
+          <izz>0.0001883</izz>
+        </inertia>
+      </inertial>
+      <collision name='tilt_1_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadtilt_new/meshes/tilt_1_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='tilt_1_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadtilt_new/meshes/tilt_1_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material><script><name>Gazebo/Red</name></script></material>
+      </visual>
+    </link>
+    <joint name='properller_1_joint' type='revolute'>
+      <pose relative_to='tilt_1_Link'>0.05075 0 -0.255 -1.5708 -0 -1.5708</pose>
+      <parent>tilt_1_Link</parent>
+      <child>properller_1_Link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.002</damping>   
+          <friction>0.005</friction> 
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='properller_1_Link'>
+      <pose relative_to='properller_1_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 -0 0.005 0 -0 0</pose>
+        <mass>0.025</mass>  <!-- 25克 -->
+        <inertia>
+          <ixx>0.00005</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00005</iyy>
+          <iyz>0</iyz>
+          <izz>0.0003</izz>  <!-- 匹配 15 寸桨的转动惯量 -->
+        </inertia>
+      </inertial>
+      <collision name='properller_1_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadtilt_new/meshes/properller_1_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='properller_1_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadtilt_new/meshes/properller_1_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material><script><name>Gazebo/Red</name></script></material>
+      </visual>
+    </link>
+    <joint name='properller_3_joint' type='revolute'>
+      <pose relative_to='tilt_1_Link'>0.05075 0 0.255 -1.5708 -0 -1.5708</pose>
+      <parent>tilt_1_Link</parent>
+      <child>properller_3_Link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <!-- <damping>0.002</damping>   
+          <friction>0.005</friction>  -->
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='properller_3_Link'>
+      <pose relative_to='properller_3_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0.005 0 -0 0</pose>
+        <mass>0.025</mass>  <!-- 25克 -->
+        <inertia>
+          <ixx>0.00005</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00005</iyy>
+          <iyz>0</iyz>
+          <izz>0.0003</izz>  <!-- 匹配 15 寸桨的转动惯量 -->
+        </inertia>
+      </inertial>
+      <collision name='properller_3_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadtilt_new/meshes/properller_3_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='properller_3_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadtilt_new/meshes/properller_3_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material><script><name>Gazebo/Red</name></script></material>
+      </visual>
+    </link>
+
+
+
+    <!-- ========================================================== -->
+    <!-- 插件区域 (气动 + 飞控)                                      -->
+    <!-- ========================================================== -->
+
+    <!-- Aero Prop 0 (CCW) -->
+    <plugin name="rotor_0_blade_1" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.10</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.0045</area><air_density>1.2041</air_density><cp>0.13 0 0</cp><forward>0 1 0</forward><upward>0 0 1</upward><link_name>properller_0_Link</link_name></plugin>
+    <plugin name="rotor_0_blade_2" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.10</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.0045</area><air_density>1.2041</air_density><cp>-0.13 0 0</cp><forward>0 -1 0</forward><upward>0 0 1</upward><link_name>properller_0_Link</link_name></plugin>
+
+    <!-- Aero Prop 1 (CCW) -->
+    <plugin name="rotor_1_blade_1" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.10</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.0045</area><air_density>1.2041</air_density><cp>0.13 0 0</cp><forward>0 1 0</forward><upward>0 0 1</upward><link_name>properller_1_Link</link_name></plugin>
+    <plugin name="rotor_1_blade_2" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.10</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.0045</area><air_density>1.2041</air_density><cp>-0.13 0 0</cp><forward>0 -1 0</forward><upward>0 0 1</upward><link_name>properller_1_Link</link_name></plugin>
+
+    <!-- Aero Prop 2 (CW) -->
+    <plugin name="rotor_2_blade_1" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.10</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.0045</area><air_density>1.2041</air_density><cp>0.13 0 0</cp><forward>0 -1 0</forward><upward>0 0 1</upward><link_name>properller_2_Link</link_name></plugin>
+    <plugin name="rotor_2_blade_2" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.10</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.0045</area><air_density>1.2041</air_density><cp>-0.13 0 0</cp><forward>0 1 0</forward><upward>0 0 1</upward><link_name>properller_2_Link</link_name></plugin>
+
+    <!-- Aero Prop 3 (CW) -->
+    <plugin name="rotor_3_blade_1" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.10</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.0045</area><air_density>1.2041</air_density><cp>0.13 0 0</cp><forward>0 -1 0</forward><upward>0 0 1</upward><link_name>properller_3_Link</link_name></plugin>
+    <plugin name="rotor_3_blade_2" filename="libLiftDragPlugin.so"><a0>0.3</a0><alpha_stall>1.4</alpha_stall><cla>4.25</cla><cda>0.10</cda><cma>0.0</cma><cla_stall>-0.025</cla_stall><cda_stall>0.0</cda_stall><cma_stall>0.0</cma_stall><area>0.0045</area><air_density>1.2041</air_density><cp>-0.13 0 0</cp><forward>0 1 0</forward><upward>0 0 1</upward><link_name>properller_3_Link</link_name></plugin>
+
+    <!-- ArduPilot Control -->
+    <plugin name="ardupilot_plugin" filename="libArduPilotPlugin.so">
+      <fdm_addr>127.0.0.1</fdm_addr>
+      <fdm_port_in>9002</fdm_port_in>
+      <fdm_port_out>9003</fdm_port_out>
+      <modelXYZToAirplaneXForwardZDown>0 0 0 3.141593 0 0</modelXYZToAirplaneXForwardZDown>
+      <imuName>quadtilt_new::imu_link::imu_sensor</imuName>
+      <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
+
+      <!-- Motors (0-3) -->
+      <control channel="0"><type>VELOCITY</type><offset>0</offset><p_gain>0.20</p_gain><i_gain>0</i_gain><d_gain>0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.5</cmd_max><cmd_min>-2.5</cmd_min><jointName>properller_0_joint</jointName><multiplier>800</multiplier></control>
+      <control channel="1"><type>VELOCITY</type><offset>0</offset><p_gain>0.20</p_gain><i_gain>0</i_gain><d_gain>0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.5</cmd_max><cmd_min>-2.5</cmd_min><jointName>properller_1_joint</jointName><multiplier>800</multiplier></control>
+      <control channel="2"><type>VELOCITY</type><offset>0</offset><p_gain>0.20</p_gain><i_gain>0</i_gain><d_gain>0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.5</cmd_max><cmd_min>-2.5</cmd_min><jointName>properller_2_joint</jointName><multiplier>-800</multiplier></control>
+      <control channel="3"><type>VELOCITY</type><offset>0</offset><p_gain>0.20</p_gain><i_gain>0</i_gain><d_gain>0</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.5</cmd_max><cmd_min>-2.5</cmd_min><jointName>properller_3_joint</jointName><multiplier>-800</multiplier></control>
+
+      <!-- Tilt Servos (4-7)  -->
+      <!-- deg_out_red = multiplier*(input(pwm to 0-1)+offset) -->
+      <control channel="4"><type>POSITION</type><offset>-0.85</offset><p_gain>40.0</p_gain><i_gain>0</i_gain><d_gain>0.5</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min><jointName>tilt_0_joint</jointName><multiplier>1.495</multiplier></control>
+      <control channel="5"><type>POSITION</type><offset>-0.85</offset><p_gain>40.0</p_gain><i_gain>0</i_gain><d_gain>0.5</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min><jointName>tilt_1_joint</jointName><multiplier>1.495</multiplier></control>
+      <!-- <control channel="6"><type>POSITION</type><offset>-0.85</offset><p_gain>40.0</p_gain><i_gain>0</i_gain><d_gain>0.5</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min><jointName>tilt_2</jointName><multiplier>-1.495</multiplier></control>
+      <control channel="7"><type>POSITION</type><offset>-0.85</offset><p_gain>40.0</p_gain><i_gain>0</i_gain><d_gain>0.5</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min><jointName>tilt_3</jointName><multiplier>-1.495</multiplier></control> -->
+    </plugin>
+
+
+  </model>
+</sdf>
