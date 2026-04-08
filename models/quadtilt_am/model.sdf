@@ -515,7 +515,83 @@
       <control channel="5"><type>POSITION</type><offset>-0.85</offset><p_gain>40.0</p_gain><i_gain>0</i_gain><d_gain>0.5</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min><jointName>tilt_1_joint</jointName><multiplier>1.495</multiplier></control>
       <!-- <control channel="6"><type>POSITION</type><offset>-0.85</offset><p_gain>40.0</p_gain><i_gain>0</i_gain><d_gain>0.5</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min><jointName>tilt_2</jointName><multiplier>-1.495</multiplier></control>
       <control channel="7"><type>POSITION</type><offset>-0.85</offset><p_gain>40.0</p_gain><i_gain>0</i_gain><d_gain>0.5</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>2.0</cmd_max><cmd_min>-2.0</cmd_min><jointName>tilt_3</jointName><multiplier>-1.495</multiplier></control> -->
+      <control channel="6">
+        <type>POSITION</type>
+        <offset>-0.5</offset>
+        <p_gain>20.0</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.0</cmd_max>
+        <cmd_min>-2.0</cmd_min>
+        <jointName>robotic_arm::joint_1</jointName>
+        <multiplier>4.7124</multiplier>
+      </control>
+      <control channel="7">
+        <type>POSITION</type>
+        <offset>-0.5</offset>
+        <p_gain>20.0</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0.05</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.0</cmd_max>
+        <cmd_min>-2.0</cmd_min>
+        <jointName>robotic_arm::joint_2</jointName>
+        <multiplier>4.7124</multiplier>
+      </control>
+      <control channel="8">
+        <type>POSITION</type>
+        <offset>-0.5</offset>
+        <p_gain>20.0</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0.05</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.0</cmd_max>
+        <cmd_min>-2.0</cmd_min>
+        <jointName>robotic_arm::joint_3</jointName>
+        <multiplier>4.7124</multiplier>
+      </control>
+      <control channel="9">
+        <type>POSITION</type>
+        <offset>-0.5</offset>
+        <p_gain>20.0</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0.05</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.0</cmd_max>
+        <cmd_min>-2.0</cmd_min>
+        <jointName>robotic_arm::joint_4</jointName>
+        <multiplier>4.7124</multiplier>
+      </control>
+      <control channel="10">
+        <type>POSITION</type>
+        <offset>-0.5</offset>
+        <p_gain>10.0</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.0</cmd_max>
+        <cmd_min>-2.0</cmd_min>
+        <jointName>robotic_arm::joint_5</jointName>
+        <multiplier>4.7124</multiplier>
+      </control>
     </plugin>
+
+    <include>
+      <uri>model://robotic_arm</uri>
+      <name>robotic_arm</name>
+      <pose>0 0 -0.04 3.1416 0 0</pose> <!-- 挂在飞机重心下方 -->
+    </include>
+
+    <joint name="arm_weld" type="fixed">
+      <parent>base_link</parent> <!-- 飞机的底座名字 -->
+      <child>robotic_arm::base_link</child>
+    </joint>
 
   </model>
 </sdf>
