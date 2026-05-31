@@ -243,7 +243,7 @@
           <izz>0.0003</izz>  <!-- 匹配 15 寸桨的转动惯量 -->
         </inertia>
       </inertial>
-      <collision name='properller_0_Link_collision'>
+      <!-- <collision name='properller_0_Link_collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -251,7 +251,7 @@
             <uri>model://quadtilt_new/meshes/properller_0_Link.STL</uri>
           </mesh>
         </geometry>
-      </collision>
+      </collision> -->
       <visual name='properller_0_Link_visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
@@ -295,7 +295,7 @@
           <izz>0.0003</izz>  <!-- 匹配 15 寸桨的转动惯量 -->
         </inertia>
       </inertial>
-      <collision name='properller_2_Link_collision'>
+      <!-- <collision name='properller_2_Link_collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -303,7 +303,7 @@
             <uri>model://quadtilt_new/meshes/properller_2_Link.STL</uri>
           </mesh>
         </geometry>
-      </collision>
+      </collision> -->
       <visual name='properller_2_Link_visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
@@ -399,7 +399,7 @@
           <izz>0.0003</izz>  <!-- 匹配 15 寸桨的转动惯量 -->
         </inertia>
       </inertial>
-      <collision name='properller_1_Link_collision'>
+      <!-- <collision name='properller_1_Link_collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -407,7 +407,7 @@
             <uri>model://quadtilt_new/meshes/properller_1_Link.STL</uri>
           </mesh>
         </geometry>
-      </collision>
+      </collision> -->
       <visual name='properller_1_Link_visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
@@ -451,7 +451,7 @@
           <izz>0.0003</izz>  <!-- 匹配 15 寸桨的转动惯量 -->
         </inertia>
       </inertial>
-      <collision name='properller_3_Link_collision'>
+      <!-- <collision name='properller_3_Link_collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -459,7 +459,7 @@
             <uri>model://quadtilt_new/meshes/properller_3_Link.STL</uri>
           </mesh>
         </geometry>
-      </collision>
+      </collision> -->
       <visual name='properller_3_Link_visual'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
@@ -580,6 +580,40 @@
         <jointName>robotic_arm::joint_5</jointName>
         <multiplier>4.7124</multiplier>
       </control>
+     
+<!-- Gripper Left Finger (Channel 11) -->
+      <control channel="11">
+        <type>POSITION</type>
+        <offset>0</offset>
+        <!-- 【关键修改】 P值降到极低，只要能缓慢合上就行 -->
+        <p_gain>0.5</p_gain>
+        <i_gain>0</i_gain>
+        <!-- 【关键修改】 D值降到微小，防止导数项放大高频噪声 -->
+        <d_gain>0.01</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <!-- 【关键修改】 限制最大输出力矩为 1N，5g的物体1N足够推得飞快了 -->
+        <cmd_max>1.0</cmd_max>
+        <cmd_min>-1.0</cmd_min>
+        <jointName>robotic_arm::left_finger_joint</jointName>
+        <multiplier>0.025</multiplier>
+      </control>
+
+      <!-- Gripper Right Finger (Channel 11) -->
+      <control channel="11">
+        <type>POSITION</type>
+        <offset>0</offset>
+        <p_gain>0.5</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0.01</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>1.0</cmd_max>
+        <cmd_min>-1.0</cmd_min>
+        <jointName>robotic_arm::right_finger_joint</jointName>
+        <multiplier>0.025</multiplier>
+      </control>
+
     </plugin>
 
     <include>

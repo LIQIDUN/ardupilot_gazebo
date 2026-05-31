@@ -299,7 +299,7 @@
         </ode>
       </physics>
     </joint>
-    <link name='link_5'>
+    <!-- <link name='link_5'>
       <pose relative_to='joint_5'>0 0 0 0 -0 0</pose>
       <inertial>
         <pose>-0 0 -0.001453 0 -0 0</pose>
@@ -328,7 +328,143 @@
           </script>
         </material>
       </visual>
+    </link> -->
+
+<!-- ================= 合并了夹爪基座的 link_5 ================= -->
+    <link name='link_5'>
+      <pose relative_to='joint_5'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <!-- 稍微上移重心，合并了基座的10g和原来link5的10g -->
+        <pose>0 0 0.01 0 -0 0</pose>
+        <mass>0.02</mass>
+        <!-- 【核心修复】将极度微小的 1.9e-08 提升到安全的 1e-05，彻底解决抽风和撕裂 -->
+        <inertia>
+          <ixx>1e-05</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>1e-05</iyy><iyz>0</iyz><izz>1e-05</izz>
+        </inertia>
+      </inertial>
+
+      <!-- 1. 原来 link_5 的微小网格视觉 -->
+      <visual name='link_5_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://robotic_arm/meshes/link_5.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+
+      <!-- 2. 追加：夹爪基座的视觉，直接作为 link_5 的一部分 -->
+      <!-- Z=0.02 是 40mm 高度基座的中心 -->
+      <visual name='gripper_base_visual'>
+        <pose>0 0 0.02 0 0 0</pose>
+        <geometry><box><size>0.03 0.06 0.04</size></box></geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <!-- (基座碰撞暂不添加，保持你说的删除碰撞防抽风状态) -->
     </link>
+
+    <!-- ================= 左侧手指 (直接连在 link_5 上) ================= -->
+    <joint name='left_finger_joint' type='prismatic'>
+      <!-- 关节直接挂在 link_5 的 Z=0.04(基座顶部) 位置 -->
+      <pose relative_to='link_5'>0 0.005 0.04 0 0 0</pose>
+      <parent>link_5</parent>
+      <child>left_finger</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.03</upper>
+          <effort>1.0</effort> <!-- 仅需极小力矩驱动 -->
+          <velocity>0.2</velocity>
+        </limit>
+        <dynamics><damping>0.1</damping><friction>0.05</friction></dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+    <link name='left_finger'>
+      <!-- 手指长 42mm，从关节再向上延伸 21mm 为中心 -->
+      <pose relative_to='left_finger_joint'>0 0 0.021 0 0 0</pose>
+      <inertial>
+        <mass>0.005</mass> <!-- 5g -->
+        <inertia>
+          <ixx>1e-05</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>1e-05</iyy><iyz>0</iyz><izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name='left_finger_visual'>
+        <geometry><box><size>0.02 0.01 0.042</size></box></geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ================= 右侧手指 (直接连在 link_5 上) ================= -->
+    <joint name='right_finger_joint' type='prismatic'>
+      <pose relative_to='link_5'>0 -0.005 0.04 0 0 0</pose>
+      <parent>link_5</parent>
+      <child>right_finger</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.03</upper>
+          <effort>1.0</effort>
+          <velocity>0.2</velocity>
+        </limit>
+        <dynamics><damping>0.1</damping><friction>0.05</friction></dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+    <link name='right_finger'>
+      <pose relative_to='right_finger_joint'>0 0 0.021 0 0 0</pose>
+      <inertial>
+        <mass>0.005</mass>
+        <inertia>
+          <ixx>1e-05</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>1e-05</iyy><iyz>0</iyz><izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name='right_finger_visual'>
+        <geometry><box><size>0.02 0.01 0.042</size></box></geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+
     <frame name='flange_to_tool0' attached_to='link_5'>
       <pose>0 0 0 0 -0 0</pose>
     </frame>
