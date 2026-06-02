@@ -1,0 +1,15 @@
+material AirportPad/Image
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tag_bundle.png
+        filtering anistropic
+        max_anisotropy 16
+      }
+    }
+  }
+}
