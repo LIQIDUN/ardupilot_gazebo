@@ -104,15 +104,40 @@
       </include>
     </model>
 
-    <model name='target'>
+    <!-- <model name="quadtilt_new">
+      <pose> 0 0 0.25 0 0 0 </pose>
+      <include>
+        <uri>model://quadtilt_new</uri>
+         <pose> 0 0 0 0 0 0 </pose>
+      </include>
+    </model> -->
+
+    <model name='target_1'>
       <static>true</static>
-      <pose>14 0.0 0.25 0 0 0</pose> 
+      <pose>8 0.0 0.30 0 0 0</pose> 
       <include>
         <uri>model://target</uri>
          <pose> 0 0 0 0 0 0 </pose>
       </include>
     </model>
 
+    <model name='target_2'>
+      <static>true</static>
+      <pose>14 -15.0 1.25 0 0 0</pose> 
+      <include>
+        <uri>model://target</uri>
+         <pose> 0 0 0 0 0 0 </pose>
+      </include>
+    </model>
+
+    <model name='target_3'>
+      <static>true</static>
+      <pose>20 -15.0 1.25 0 0 0</pose> 
+      <include>
+        <uri>model://target</uri>
+         <pose> 0 0 0 0 0 0 </pose>
+      </include>
+    </model>
     
 
     <!-- <model name='obs_box_10_0.2_2.5_three'>
@@ -126,7 +151,7 @@
 
     <model name='obs_box_10_0.1_1.5_four'>
       <static>true</static>
-      <pose>12. 0.0 0.2 1.22 0 1.57</pose> 
+      <pose>6. 0.0 0.2 1.22 0 1.57</pose> 
       <include>
         <uri>model://selicon</uri>
          <pose> 0 0 0 0 0 0 </pose>
@@ -135,7 +160,7 @@
 
     <model name='obs_box_10_0.1_1.5_five'>
       <static>true</static>
-      <pose>14 0.0 0.2 1.22 0 1.57</pose> 
+      <pose>8 0.0 0.2 1.22 0 1.57</pose> 
       <include>
         <uri>model://selicon</uri>
          <pose> 0 0 0 0 0 0 </pose>
