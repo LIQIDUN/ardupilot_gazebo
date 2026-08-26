@@ -166,8 +166,8 @@
       <axis>
         <xyz>1 0 0</xyz>
         <limit>
-          <lower>-0.53</lower>
-          <upper>0.53</upper>
+          <lower>-0.01</lower>
+          <upper>0.01</upper>
         </limit>
         <dynamics><damping>1.000</damping></dynamics>
       </axis>
@@ -599,8 +599,6 @@
       <alpha_stall>0.3391428111</alpha_stall><cla_stall>-3.85</cla_stall><cda_stall>-0.9233984055</cda_stall><cma_stall>0</cma_stall>
       <cp>-0.5 0 0.05</cp><area>0.02</area><air_density>1.2041</air_density><forward>1 0 0</forward><upward>0 1 0</upward>
       <link_name>base_link</link_name>
-      <control_joint_name>rudder_joint</control_joint_name>
-      <control_joint_rad_to_cl>4.0</control_joint_rad_to_cl>
     </plugin>
 
     <!-- ArduPilot Control -->
@@ -639,11 +637,6 @@
         <multiplier>1</multiplier><offset>-0.5</offset><type>POSITION</type>
         <p_gain>2.5</p_gain><i_gain>0</i_gain><d_gain>0.1</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>1</cmd_max><cmd_min>-1</cmd_min>
         <jointName>elevator_joint</jointName>
-      </control>
-      <control channel="11">
-        <multiplier>1</multiplier><offset>-0.5</offset><type>POSITION</type>
-        <p_gain>2.5</p_gain><i_gain>0</i_gain><d_gain>0.1</d_gain><i_max>0</i_max><i_min>0</i_min><cmd_max>1</cmd_max><cmd_min>-1</cmd_min>
-        <jointName>rudder_joint</jointName>
       </control>
     </plugin>
   </model>
