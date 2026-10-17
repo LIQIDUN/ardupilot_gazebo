@@ -1,0 +1,13 @@
+{
+  "schema": "p54_bundle_v1",
+  "generator_sha256": "419d0cfe39737234d53372bdabf8afc2ed3d35d7a87e851023f7f41485bb4a25",
+  "files_sha256": {
+    "benchmark.world": "d8cda69e8a319b2fcdf36d744ce1dd2984358536006a67cb139918308b88121c",
+    "parameters.json": "a6bc211909c12025d45ac5d81d22e79e07d97d3b5505c7af084a3e4b1b953cef",
+    "obstacles.json": "f20e55f552b64a111426b8216513ced8409d92140c78adebd22e73d96d42b863",
+    "targets.json": "dccfbd69095001970856f7a8d691270a539754d27d5547f1a34665b284b6d608"
+  },
+  "safety_status": "ENVIRONMENT_GEOMETRY_ONLY_NO_ROBOT_NO_EXECUTION",
+  "methods_evaluated": [],
+  "target_count": 27
+}

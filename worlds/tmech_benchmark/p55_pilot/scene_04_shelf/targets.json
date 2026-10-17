@@ -1,0 +1,978 @@
+{
+  "schema": "p54_targets_v1",
+  "tool_frame": "x=tangent_u,y=-v,z=-normal_at_zero_delta",
+  "targets": [
+    {
+      "id": "target_000",
+      "depth_m": 0.4,
+      "lateral_m": -0.2,
+      "orientation_delta_deg": -10.0,
+      "gazebo": {
+        "position_m": [
+          2.2,
+          -0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.2,
+          2.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          0.06162841671621935,
+          -0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_001",
+      "depth_m": 0.4,
+      "lateral_m": -0.2,
+      "orientation_delta_deg": 0.0,
+      "gazebo": {
+        "position_m": [
+          2.2,
+          -0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.2,
+          2.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7071067811865476,
+          0.7071067811865476,
+          0.0,
+          0.0
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_002",
+      "depth_m": 0.4,
+      "lateral_m": -0.2,
+      "orientation_delta_deg": 10.0,
+      "gazebo": {
+        "position_m": [
+          2.2,
+          -0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          -0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.2,
+          2.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          -0.06162841671621935,
+          0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_003",
+      "depth_m": 0.4,
+      "lateral_m": 0.0,
+      "orientation_delta_deg": -10.0,
+      "gazebo": {
+        "position_m": [
+          2.2,
+          0.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.0,
+          2.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          0.06162841671621935,
+          -0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_004",
+      "depth_m": 0.4,
+      "lateral_m": 0.0,
+      "orientation_delta_deg": 0.0,
+      "gazebo": {
+        "position_m": [
+          2.2,
+          0.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.0,
+          2.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7071067811865476,
+          0.7071067811865476,
+          0.0,
+          0.0
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_005",
+      "depth_m": 0.4,
+      "lateral_m": 0.0,
+      "orientation_delta_deg": 10.0,
+      "gazebo": {
+        "position_m": [
+          2.2,
+          0.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          -0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.0,
+          2.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          -0.06162841671621935,
+          0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_006",
+      "depth_m": 0.4,
+      "lateral_m": 0.2,
+      "orientation_delta_deg": -10.0,
+      "gazebo": {
+        "position_m": [
+          2.2,
+          0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          -0.2,
+          2.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          0.06162841671621935,
+          -0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_007",
+      "depth_m": 0.4,
+      "lateral_m": 0.2,
+      "orientation_delta_deg": 0.0,
+      "gazebo": {
+        "position_m": [
+          2.2,
+          0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          -0.2,
+          2.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7071067811865476,
+          0.7071067811865476,
+          0.0,
+          0.0
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_008",
+      "depth_m": 0.4,
+      "lateral_m": 0.2,
+      "orientation_delta_deg": 10.0,
+      "gazebo": {
+        "position_m": [
+          2.2,
+          0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          -0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          -0.2,
+          2.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          -0.06162841671621935,
+          0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_009",
+      "depth_m": 1.2,
+      "lateral_m": -0.2,
+      "orientation_delta_deg": -10.0,
+      "gazebo": {
+        "position_m": [
+          3.0,
+          -0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.2,
+          3.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          0.06162841671621935,
+          -0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_010",
+      "depth_m": 1.2,
+      "lateral_m": -0.2,
+      "orientation_delta_deg": 0.0,
+      "gazebo": {
+        "position_m": [
+          3.0,
+          -0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.2,
+          3.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7071067811865476,
+          0.7071067811865476,
+          0.0,
+          0.0
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_011",
+      "depth_m": 1.2,
+      "lateral_m": -0.2,
+      "orientation_delta_deg": 10.0,
+      "gazebo": {
+        "position_m": [
+          3.0,
+          -0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          -0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.2,
+          3.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          -0.06162841671621935,
+          0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_012",
+      "depth_m": 1.2,
+      "lateral_m": 0.0,
+      "orientation_delta_deg": -10.0,
+      "gazebo": {
+        "position_m": [
+          3.0,
+          0.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.0,
+          3.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          0.06162841671621935,
+          -0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_013",
+      "depth_m": 1.2,
+      "lateral_m": 0.0,
+      "orientation_delta_deg": 0.0,
+      "gazebo": {
+        "position_m": [
+          3.0,
+          0.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.0,
+          3.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7071067811865476,
+          0.7071067811865476,
+          0.0,
+          0.0
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_014",
+      "depth_m": 1.2,
+      "lateral_m": 0.0,
+      "orientation_delta_deg": 10.0,
+      "gazebo": {
+        "position_m": [
+          3.0,
+          0.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          -0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.0,
+          3.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          -0.06162841671621935,
+          0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_015",
+      "depth_m": 1.2,
+      "lateral_m": 0.2,
+      "orientation_delta_deg": -10.0,
+      "gazebo": {
+        "position_m": [
+          3.0,
+          0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          -0.2,
+          3.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          0.06162841671621935,
+          -0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_016",
+      "depth_m": 1.2,
+      "lateral_m": 0.2,
+      "orientation_delta_deg": 0.0,
+      "gazebo": {
+        "position_m": [
+          3.0,
+          0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          -0.2,
+          3.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7071067811865476,
+          0.7071067811865476,
+          0.0,
+          0.0
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_017",
+      "depth_m": 1.2,
+      "lateral_m": 0.2,
+      "orientation_delta_deg": 10.0,
+      "gazebo": {
+        "position_m": [
+          3.0,
+          0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          -0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          -0.2,
+          3.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          -0.06162841671621935,
+          0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_018",
+      "depth_m": 2.0,
+      "lateral_m": -0.2,
+      "orientation_delta_deg": -10.0,
+      "gazebo": {
+        "position_m": [
+          3.8,
+          -0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.2,
+          3.8,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          0.06162841671621935,
+          -0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_019",
+      "depth_m": 2.0,
+      "lateral_m": -0.2,
+      "orientation_delta_deg": 0.0,
+      "gazebo": {
+        "position_m": [
+          3.8,
+          -0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.2,
+          3.8,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7071067811865476,
+          0.7071067811865476,
+          0.0,
+          0.0
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_020",
+      "depth_m": 2.0,
+      "lateral_m": -0.2,
+      "orientation_delta_deg": 10.0,
+      "gazebo": {
+        "position_m": [
+          3.8,
+          -0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          -0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.2,
+          3.8,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          -0.06162841671621935,
+          0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_021",
+      "depth_m": 2.0,
+      "lateral_m": 0.0,
+      "orientation_delta_deg": -10.0,
+      "gazebo": {
+        "position_m": [
+          3.8,
+          0.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.0,
+          3.8,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          0.06162841671621935,
+          -0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_022",
+      "depth_m": 2.0,
+      "lateral_m": 0.0,
+      "orientation_delta_deg": 0.0,
+      "gazebo": {
+        "position_m": [
+          3.8,
+          0.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.0,
+          3.8,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7071067811865476,
+          0.7071067811865476,
+          0.0,
+          0.0
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_023",
+      "depth_m": 2.0,
+      "lateral_m": 0.0,
+      "orientation_delta_deg": 10.0,
+      "gazebo": {
+        "position_m": [
+          3.8,
+          0.0,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          -0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          0.0,
+          3.8,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          -0.06162841671621935,
+          0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_024",
+      "depth_m": 2.0,
+      "lateral_m": 0.2,
+      "orientation_delta_deg": -10.0,
+      "gazebo": {
+        "position_m": [
+          3.8,
+          0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          -0.2,
+          3.8,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          0.06162841671621935,
+          -0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_025",
+      "depth_m": 2.0,
+      "lateral_m": 0.2,
+      "orientation_delta_deg": 0.0,
+      "gazebo": {
+        "position_m": [
+          3.8,
+          0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          -0.2,
+          3.8,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7071067811865476,
+          0.7071067811865476,
+          0.0,
+          0.0
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    },
+    {
+      "id": "target_026",
+      "depth_m": 2.0,
+      "lateral_m": 0.2,
+      "orientation_delta_deg": 10.0,
+      "gazebo": {
+        "position_m": [
+          3.8,
+          0.2,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.9961946980917455,
+          0.0,
+          -0.08715574274765817,
+          0.0
+        ]
+      },
+      "planner": {
+        "position_m": [
+          -0.2,
+          3.8,
+          1.955
+        ],
+        "quat_xyzw": [
+          0.7044160264027587,
+          0.7044160264027587,
+          -0.06162841671621935,
+          0.06162841671621935
+        ]
+      },
+      "position_tolerance_m": 0.005,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "type": "PRECONTACT_NOT_EXECUTED",
+      "planner_3r_tool_mapping": "UNVERIFIED"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "scene": "shelf",
+  "beta_deg": 25.0,
+  "clearance": 0.65,
+  "width": 1.2,
+  "length": 2.4,
+  "thickness": 0.08,
+  "center": [
+    3.0,
+    0.0,
+    2.2
+  ],
+  "depths": [
+    0.4,
+    1.2,
+    2.0
+  ],
+  "lateral": [
+    -0.2,
+    0.0,
+    0.2
+  ],
+  "orientation_deg": [
+    -10.0,
+    0.0,
+    10.0
+  ],
+  "tool_offset": 0.08
+}
