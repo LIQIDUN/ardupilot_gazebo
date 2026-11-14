@@ -121,7 +121,7 @@
       </include>
     </model>
 
-    <model name='target_2'>
+    <!-- <model name='target_2'>
       <static>true</static>
       <pose>14 -15.0 1.25 0 0 0</pose> 
       <include>
@@ -138,7 +138,7 @@
          <pose> 0 0 0 0 0 0 </pose>
       </include>
     </model>
-    
+     -->
 
     <!-- <model name='obs_box_10_0.2_2.5_three'>
       <static>true</static>
@@ -151,7 +151,7 @@
 
     <model name='obs_box_10_0.1_1.5_four'>
       <static>true</static>
-      <pose>6. 0.0 0.2 1.22 0 1.57</pose> 
+      <pose>5. 0.0 0.2 1.22 0 1.57</pose> 
       <include>
         <uri>model://selicon</uri>
          <pose> 0 0 0 0 0 0 </pose>
