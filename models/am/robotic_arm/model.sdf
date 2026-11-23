@@ -1,0 +1,414 @@
+<sdf version='1.7'>
+  <model name='robotic_arm'>
+    <link name='link_1'>
+      <pose>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-2.1e-05 0.000147 0.016563 0 -0 0</pose>
+        <mass>0.057604</mass>
+        <inertia>
+          <ixx>1.8263e-05</ixx>
+          <ixy>-3.807e-10</ixy>
+          <ixz>-1.4763e-10</ixz>
+          <iyy>1.3985e-05</iyy>
+          <iyz>-2.922e-08</iyz>
+          <izz>2.307e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://am/robotic_arm/meshes/link_1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint_2' type='revolute'>
+      <pose relative_to='link_1'>0.000113 0 0.038401 -1.57079 -1.57079 -3.14159</pose>
+      <parent>link_1</parent>
+      <child>link_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.36</lower>
+          <upper>2.36</upper>
+          <effort>10</effort>
+          <velocity>1.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.05</damping>
+          <friction>0.01</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='link_2'>
+      <pose relative_to='joint_2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.056726 -0 -0.000271 0 -0 0</pose>
+        <mass>0.039095</mass>
+        <inertia>
+          <ixx>1.0114e-05</ixx>
+          <ixy>7.2762e-21</ixy>
+          <ixz>2.0973e-19</ixz>
+          <iyy>1.4176e-05</iyy>
+          <iyz>3.677e-21</iyz>
+          <izz>7.7479e-06</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://am/robotic_arm/meshes/link_2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint_3' type='revolute'>
+      <pose relative_to='link_2'>0.10507 0 0 0 -0 0</pose>
+      <parent>link_2</parent>
+      <child>link_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.36</lower>
+          <upper>2.36</upper>
+          <effort>10</effort>
+          <velocity>1.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.05</damping>
+          <friction>0.01</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='link_3'>
+      <pose relative_to='joint_3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.043581 -0.000872 -0.000243 0 -0 0</pose>
+        <mass>0.075843</mass>
+        <inertia>
+          <ixx>1.4302e-05</ixx>
+          <ixy>2.9527e-10</ixy>
+          <ixz>-1.407e-12</ixz>
+          <iyy>2.3711e-05</iyy>
+          <iyz>-4.2397e-20</iyz>
+          <izz>1.4547e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://am/robotic_arm/meshes/link_3.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint_4' type='revolute'>
+      <pose relative_to='link_3'>0.087162 -0.000311 -0.000271 0 -0 0</pose>
+      <parent>link_3</parent>
+      <child>link_4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.36</lower>
+          <upper>2.36</upper>
+          <effort>10</effort>
+          <velocity>1.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.05</damping>
+          <friction>0.01</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='link_4'>
+      <pose relative_to='joint_4'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.044666 0.009062 0.000129 0 -0 0</pose>
+        <mass>0.038113</mass>
+        <inertia>
+          <ixx>7.4825e-06</ixx>
+          <ixy>-5.112e-07</ixy>
+          <ixz>3.807e-10</ixz>
+          <iyy>1.0505e-05</iyy>
+          <iyz>-1.4763e-10</iyz>
+          <izz>1.2542e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_4_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://am/robotic_arm/meshes/link_4.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='joint_5' type='revolute'>
+      <pose relative_to='link_4'>0.073 0 0 -1.5708 -0 -1.5708</pose>
+      <parent>link_4</parent>
+      <child>link_5</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-2.36</lower>
+          <upper>2.36</upper>
+          <effort>10</effort>
+          <velocity>1.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.05</damping>
+          <friction>0.01</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <!-- <link name='link_5'>
+      <pose relative_to='joint_5'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0 -0.001453 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.9014e-08</ixx>
+          <ixy>-9.2928e-25</ixy>
+          <ixz>3.0708e-24</ixz>
+          <iyy>1.9014e-08</iyy>
+          <iyz>1.5073e-23</iyz>
+          <izz>3.6585e-08</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_5_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://am/robotic_arm/meshes/link_5.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link> -->
+
+<!-- ================= 合并了夹爪基座的 link_5 ================= -->
+    <link name='link_5'>
+      <pose relative_to='joint_5'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <!-- 稍微上移重心，合并了基座的10g和原来link5的10g -->
+        <pose>0 0 0.01 0 -0 0</pose>
+        <mass>0.02</mass>
+        <!-- 【核心修复】将极度微小的 1.9e-08 提升到安全的 1e-05，彻底解决抽风和撕裂 -->
+        <inertia>
+          <ixx>1e-05</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>1e-05</iyy><iyz>0</iyz><izz>1e-05</izz>
+        </inertia>
+      </inertial>
+
+      <!-- 1. 原来 link_5 的微小网格视觉 -->
+      <visual name='link_5_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://am/robotic_arm/meshes/link_5.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+
+      <!-- 2. 追加：夹爪基座的视觉，直接作为 link_5 的一部分 -->
+      <!-- Z=0.02 是 40mm 高度基座的中心 -->
+      <visual name='gripper_base_visual'>
+        <pose>0 0 0.02 0 0 0</pose>
+        <geometry><box><size>0.03 0.06 0.04</size></box></geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <!-- (基座碰撞暂不添加，保持你说的删除碰撞防抽风状态) -->
+    </link>
+
+    <!-- ================= 左侧手指 (直接连在 link_5 上) ================= -->
+    <joint name='left_finger_joint' type='prismatic'>
+      <!-- 关节直接挂在 link_5 的 Z=0.04(基座顶部) 位置 -->
+      <pose relative_to='link_5'>0 0.005 0.04 0 0 0</pose>
+      <parent>link_5</parent>
+      <child>left_finger</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.03</upper>
+          <effort>1.0</effort> <!-- 仅需极小力矩驱动 -->
+          <velocity>0.2</velocity>
+        </limit>
+        <dynamics><damping>0.1</damping><friction>0.05</friction></dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+    <link name='left_finger'>
+      <!-- 手指长 42mm，从关节再向上延伸 21mm 为中心 -->
+      <pose relative_to='left_finger_joint'>0 0 0.021 0 0 0</pose>
+      <inertial>
+        <mass>0.005</mass> <!-- 5g -->
+        <inertia>
+          <ixx>1e-05</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>1e-05</iyy><iyz>0</iyz><izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name='left_finger_visual'>
+        <geometry><box><size>0.02 0.01 0.042</size></box></geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ================= 右侧手指 (直接连在 link_5 上) ================= -->
+    <joint name='right_finger_joint' type='prismatic'>
+      <pose relative_to='link_5'>0 -0.005 0.04 0 0 0</pose>
+      <parent>link_5</parent>
+      <child>right_finger</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.03</upper>
+          <effort>1.0</effort>
+          <velocity>0.2</velocity>
+        </limit>
+        <dynamics><damping>0.1</damping><friction>0.05</friction></dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+    <link name='right_finger'>
+      <pose relative_to='right_finger_joint'>0 0 0.021 0 0 0</pose>
+      <inertial>
+        <mass>0.005</mass>
+        <inertia>
+          <ixx>1e-05</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>1e-05</iyy><iyz>0</iyz><izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name='right_finger_visual'>
+        <geometry><box><size>0.02 0.01 0.042</size></box></geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+
+    <frame name='flange_to_tool0' attached_to='link_5'>
+      <pose>0 0 0 0 -0 0</pose>
+    </frame>
+    <frame name='tool0' attached_to='flange_to_tool0'/>
+  </model>
+</sdf>
